@@ -4,7 +4,9 @@ import React, { useEffect, useState } from 'react';
 
 const CreateData = ({ onCreateButtonClick }) => {
     const [data1, setData1] = useState([]);
-    var id = 10;
+    var id = 10;//Comeca em 10
+    //++id passa para 11 -> 12 -> 13 
+    //A primeira vez que adicionarem conteudo adiciona o id 11 pois eu fiz a contar com ja ter 10 produtos na BD
    
 
 const addApi = ()=>{

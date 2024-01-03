@@ -75,3 +75,34 @@
 bottom: 146px;
 }
 */
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
+  gap: 16px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.cells{
+
+padding: 7px;
+text-align: center;
+}
+
+img{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  max-height: 130px;
+  object-fit: cover;
+  
+  
+}
+p{
+  text-decoration: wavy;
+  font-family: fantasy;
+}
+p:hover{
+  text-decoration: underline cadetblue 4px;
+}

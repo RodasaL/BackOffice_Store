@@ -26,14 +26,16 @@ const DataDisplay = ({ onDataButtonClick }) => {
   return (
     <div>
       <button className='button-17' id='datbut' onClick={()=>{readApi(); onDataButtonClick();} }>Carregar Dados</button>
+      <div className='grid'>
       {data.map((item) => (
-        <div key={item.id}>
+        <div className='cells' key={item.id}>
             <p>
-          ID: {item.id}, Nome: {item.nome}, Tamanho: {item.tamanho}, Preco: {item.preco} 
+          ID: {item.id},  Nome:  {item.nome}, Tamanho:  {item.tamanho}, Preco:  {item.preco} 
           </p>
         <img src={item.link} alt={'imagem de ${item.nome}'} style={{ maxWidth: '100%' }} />
         </div>
       ))}
+    </div>
     </div>
   );
 };
