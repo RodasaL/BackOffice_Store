@@ -1,31 +1,46 @@
+import 'devextreme/dist/css/dx.light.css';
 
 import './App.css';
 // App.js
 import React from 'react';
-import DataDisplay from './DataDisplay';
-import CreateData from './CreateData';
-import DeleteDisplay from './DeleteDisplay';
-import UpdateDisplay from './UpdateDisplay';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Home from './pages/Home';
+import BackOffice from './pages/Backoffice';
+import Login from './pages/Login';
+import Camisolas from './pages/Camisolas';
+import Tenis from './pages/Tenis';
 
 const App = () => {
-  let contador = 0;
-  let contador2 = 0;
-  const handleDataButtonClick = () => {
-    // Lógica adicional pode ser adicionada aqui, se necessário
-    console.log('Botão clicado!');
-    ++contador;
-    console.log(contador);
-  };
-  const handleDataButtonClick2 = () => {
-    // Lógica adicional pode ser adicionada aqui, se necessário
-    console.log('Botão de adicionar clicado!');
-    ++contador2;
-    console.log(contador2);
-  };
+ 
 
   return (
     <div>
-      <h1>Admin BackOffice</h1>
+     <BrowserRouter>
+     <Routes>
+      <Route path ="/" element={<Home />}></Route>
+      <Route path ="/home" element={<Home />}></Route>
+      <Route path ="/admin" element={<BackOffice />}></Route>
+      <Route path ="/BackOffice" element={<BackOffice />}></Route>
+      <Route path ="/Login" element={<Login />}></Route>
+      <Route path ="/Camisolas" element={<Camisolas/>}></Route>
+      <Route path ="/Tenis" element={<Tenis/>}></Route>
+    
+
+
+
+     </Routes>
+     </BrowserRouter>
+     
+    </div>
+  );
+};
+
+export default App;
+
+/*
+<div>
+      <Navbartest></Navbartest>
+      <h1 id="Back">Admin BackOffice</h1>
       <DeleteDisplay></DeleteDisplay>
       <UpdateDisplay></UpdateDisplay>
       <CreateData onCreateButtonClick={handleDataButtonClick2}></CreateData>
@@ -33,7 +48,4 @@ const App = () => {
       
      
     </div>
-  );
-};
-
-export default App;
+    */

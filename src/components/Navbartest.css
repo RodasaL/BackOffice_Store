@@ -1,0 +1,71 @@
+.NavbarContainer{
+background-color: rgb(51, 49, 49);
+display: flex;
+justify-content: space-between;
+align-items: center;
+opacity: 0.98;
+padding-bottom: 6px;
+padding-top: 6px;
+
+}
+.links li{
+    display: inline-block;
+    
+    padding: 1px;
+    list-style: none;
+
+
+}
+#S,#C,#H{
+    padding-right: 40px;
+}
+#L{
+    padding: 9px 24px;
+ margin-right: 20px;
+ border-radius: 80px;
+ background-color: rgb(24, 149, 33);
+ border: none;
+ color: rgb(197, 230, 219);
+}
+#L:hover{
+    color: black;
+}
+.NavbarContainer a{
+    font-family: fantasy;
+    font-weight: 300;
+    font-size: 14px;
+    color: rgb(197, 230, 219);
+    text-decoration: none;
+}
+.links li a{
+    transition: all 0.3s ease 0s;
+}
+
+.links li a:hover{
+   color: rgb(23, 175, 33);
+   text-decoration: underline rgb(201, 204, 216) 3px;
+   padding-bottom: 2px;
+}
+label{
+   
+    display: flex;
+    background-color:whitesmoke;
+    border-radius: 40px;
+    padding: 6px;
+    position: relative;
+    margin-left: auto;
+    margin-right: 10px;
+  
+
+}
+label input{
+    opacity: 0;
+
+}
+input:hover{
+    cursor: pointer;
+}
+
+label.checked{
+    background-color: black;
+}

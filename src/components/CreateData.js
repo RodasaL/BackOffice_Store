@@ -2,7 +2,7 @@ import './CreateData.css';
 // DataDisplay.js
 import React, { useEffect, useState } from 'react';
 
-const CreateData = ({ onCreateButtonClick }) => {
+const CreateData = ({  }) => {
     const [data1, setData1] = useState([]);
     var id = 10;//Comeca em 10
     //++id passa para 11 -> 12 -> 13 
@@ -49,7 +49,7 @@ useEffect(() => {
 
   return (
     <div>
-      <button className='button-17' id='AddBut' onClick={()=>{addApi(); onCreateButtonClick();} }>Adicionar Dados</button>
+      <button className='button-17' id='AddBut' onClick={()=>{addApi()} }>Adicionar Dados</button>
       
     </div>
   );
