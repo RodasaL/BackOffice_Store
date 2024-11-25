@@ -6,13 +6,27 @@ const DataDisplay = ({ flagp }) => {
   const [data, setData] = useState([]);
 
   const readApi = () => {
-    fetch('https://sheetdb.io/api/v1/09263jrvrbrlq')
-      .then((response) => response.json())
+    fetch('https://sheetdb.io/api/v1/09263jrvrbrlq', {
+      method: 'GET',
+      headers: {
+        'Authorization': 'Bearer 6tyb809a0oacv5ucrl9q6sbi0k9qs3y32angcqny',
+        'Content-Type': 'application/json'
+      }
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Erro ${response.status}: ${response.statusText}`);
+        }
+        return response.json();
+      })
       .then((data) => {
+        console.log('Dados recebidos:', data);
         setData(data);
+      })
+      .catch((error) => {
+        console.error('Erro ao buscar os dados:', error);
       });
   };
-
   useEffect(() => {
     readApi();
   }, []);

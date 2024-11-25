@@ -6,12 +6,33 @@ const DataDisplayTenis = ({ flagp }) => {
   const [data, setData] = useState([]);
 
   const readApi = () => {
-    fetch('https://sheetdb.io/api/v1/8z00xfxch855e')
-      .then((response) => response.json())
+    fetch('https://sheetdb.io/api/v1/8z00xfxch855e', {
+      method: 'GET',
+      headers: {
+        'Authorization': 'Bearer p8af9nxtfau1b45xu1i4o0be76tsgukjkbv3ws74',
+        'Content-Type': 'application/json'
+      }
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Erro ${response.status}: ${response.statusText}`);
+        }
+        return response.json();
+      })
       .then((data) => {
+        console.log('Dados recebidos:', data);
         setData(data);
+      })
+      .catch((error) => {
+        console.error('Erro ao buscar os dados:', error);
       });
   };
+  
+  useEffect(() => {
+    readApi();
+  }, []);
+  
+  
 
   useEffect(() => {
     readApi();
